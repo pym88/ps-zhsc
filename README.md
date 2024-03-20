@@ -1,4 +1,5 @@
 # hm-shopping
+移动端智慧商城模板
 
 ## Project setup
 ```
@@ -22,5 +23,4 @@ yarn lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
-# ps-zhsc
-移动端智慧商城模板
+
