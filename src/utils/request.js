@@ -8,6 +8,15 @@ const request = axios.create({
 
 //添加请求拦截器
 request.interceptors.request.use(function(config) {
+
+    //添加loading效果，禁止背景点击（节流处理）
+    Toast.loading({
+        message: '加载中...',
+        forbidClick: true,
+        loadingType: 'spinner',
+        duration : 0
+      });
+
     // 在发送请求之前做些什么
     return config;
 }),function(error){
@@ -21,6 +30,8 @@ request.interceptors.response.use(function(response) {
     if(res.status !== 200){
         Toast(res.message)
         return Promise.reject(res.message)   //抛出错误的promise
+    }else{
+        Toast.clear()     //请求完清空loading效果
     }
     // 对响应数据做点什么
     return res;
