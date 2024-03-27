@@ -65,7 +65,7 @@ export default {
    const { data : { pageData }} = await getHomeData()
    console.log(pageData)
    this.bannerList = pageData.items[1].data
-   this.navList = pageData.items[4].data
+   this.navList = pageData.items[3].data
    this.goodsList = pageData.items[6].data
    }
 }
