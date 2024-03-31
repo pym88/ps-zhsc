@@ -6,7 +6,7 @@
         readonly
         shape="round"
         background="#ffffff"
-        :value="querySearch"
+        :value="querySearch || '搜索商品'" 
         show-action
         @click="$router.push('/search')"
       >
@@ -19,7 +19,7 @@
       <div class="sort-btns">
         <div class="sort-item">综合</div>
         <div class="sort-item">销量</div>
-        <div class="sort-item">价格 </div>
+        <div class="sort-item">价格</div>
       </div>
   
       <div class="goods-list">
@@ -62,32 +62,33 @@
   }
   </script>
   
-  <style lang="less" scoped>
-  .search {
-    padding-top: 46px;
-    ::v-deep .van-icon-arrow-left {
-      color: #333;
-    }
-    .tool {
-      font-size: 24px;
-      height: 40px;
-      line-height: 40px;
-    }
-  
-    .sort-btns {
-      display: flex;
-      height: 36px;
-      line-height: 36px;
-      .sort-item {
-        text-align: center;
-        flex: 1;
-        font-size: 16px;
-      }
+<style lang="less" scoped>
+.search {
+  padding-top: 46px;
+  ::v-deep .van-icon-arrow-left {
+    color: #333;
+  }
+  .tool {
+    font-size: 24px;
+    height: 40px;
+    line-height: 40px;
+  }
+
+  .sort-btns {
+    display: flex;
+    height: 36px;
+    line-height: 36px;
+    .sort-item {
+      text-align: center;
+      flex: 1;
+      font-size: 16px;
     }
   }
-  
-  // 商品样式
-  .goods-list {
-    background-color: #f6f6f6;
-  }
-  </style>
+}
+
+// 商品样式
+.goods-list {
+  background-color: #f6f6f6;
+}
+
+</style>
